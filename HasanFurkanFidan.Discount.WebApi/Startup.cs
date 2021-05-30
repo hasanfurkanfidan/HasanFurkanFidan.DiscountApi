@@ -1,3 +1,5 @@
+using HasanFurkanFidan.UdemyCourse.SHARED.DataAccess;
+using HasanFurkanFidan.UdemyCourse.SHARED.DataAccess.Dapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,7 +28,7 @@ namespace HasanFurkanFidan.Discount.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped(typeof(IGenericRepository<>), typeof(DpGenericRepository<>));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

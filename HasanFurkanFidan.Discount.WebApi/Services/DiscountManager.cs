@@ -1,4 +1,5 @@
-﻿using HasanFurkanFidan.UdemyCourse.SHARED.Dtos;
+﻿using HasanFurkanFidan.UdemyCourse.SHARED.DataAccess;
+using HasanFurkanFidan.UdemyCourse.SHARED.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,19 @@ namespace HasanFurkanFidan.Discount.WebApi.Services
 {
     public class DiscountManager : IDiscountService
     {
-        public DiscountManager()
+        private readonly IGenericRepository<Models.Discount> _genericRepository;
+        public DiscountManager(IGenericRepository<Models.Discount> genericRepository)
         {
-
+            _genericRepository = genericRepository;
         }
-        public Task<Response<Models.Discount>> GetDiscount(string userId, string code)
+        public async Task<Response<Models.Discount>> GetDiscount(string userId, string code)
         {
-            throw new NotImplementedException();
+            var discount = await _genericRepository.GetAsync(p => p.Code == code && p.UserId == userId);
+            if (discount!=null)
+            {
+                return Response<Models.Discount>.Success(discount, 200);
+            }
+            return Response<Models.Discount>.Fail("İndirim kodu bulunamadı", 400);
         }
     }
 }
