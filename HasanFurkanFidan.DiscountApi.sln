@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HasanFurkanFidan.Discount.WebApi", "HasanFurkanFidan.Discount.WebApi\HasanFurkanFidan.Discount.WebApi.csproj", "{512EBBDF-3E12-4AF8-AA4C-E66DD694EF0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SHARED", "SHARED", "{C4172B21-592F-450A-9837-65E314CE95D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HasanFurkanFidan.UdemyCourse.SHARED", "SHARED\HasanFurkanFidan.UdemyCourse.SHARED.csproj", "{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{512EBBDF-3E12-4AF8-AA4C-E66DD694EF0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512EBBDF-3E12-4AF8-AA4C-E66DD694EF0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512EBBDF-3E12-4AF8-AA4C-E66DD694EF0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512EBBDF-3E12-4AF8-AA4C-E66DD694EF0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F1AC8EC-A1CC-455D-AE83-3D65C1CDC240} = {C4172B21-592F-450A-9837-65E314CE95D1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F936245-CCB8-4FE2-9212-E6A031A2D23F}
+	EndGlobalSection
+EndGlobal
