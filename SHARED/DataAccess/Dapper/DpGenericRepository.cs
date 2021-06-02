@@ -37,7 +37,8 @@ namespace HasanFurkanFidan.UdemyCourse.SHARED.DataAccess.Dapper
 
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-           return await _connection.GetAsync<TEntity>(expression);
+            throw new NotImplementedException();
+
         }
 
         public async Task<TEntity> GetByIdAsync(int id)
@@ -47,7 +48,7 @@ namespace HasanFurkanFidan.UdemyCourse.SHARED.DataAccess.Dapper
 
         public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> expression)
         {
-          return await _connection.GetAsync<List<TEntity>>(expression);
+            throw new NotImplementedException();
         }
 
         public Task<List<TEntity>> GetListWithSpecQuery(ISpesification<TEntity> spesification)

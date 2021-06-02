@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HasanFurkanFidan.Discount.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class DiscountsController : CustomBaseController
     {
@@ -18,6 +18,7 @@ namespace HasanFurkanFidan.Discount.WebApi.Controllers
         {
             _disCountService = discountService;
         }
+        [HttpGet]
         public async Task<IActionResult>GetDiscount(string userId,string code)
         {
             var disCount = await _disCountService.GetDiscount(userId, code);

@@ -1,3 +1,5 @@
+using HasanFurkanFidan.Discount.WebApi.Data;
+using HasanFurkanFidan.Discount.WebApi.Services;
 using HasanFurkanFidan.UdemyCourse.SHARED.DataAccess;
 using HasanFurkanFidan.UdemyCourse.SHARED.DataAccess.Dapper;
 using Microsoft.AspNetCore.Builder;
@@ -11,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,7 +32,10 @@ namespace HasanFurkanFidan.Discount.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IDbConnection>(con => new SqlConnection(Configuration.GetSection("connectionMsSql").Value));
             services.AddScoped(typeof(IGenericRepository<>), typeof(DpGenericRepository<>));
+            services.AddScoped<IDiscountService, DiscountManager>();
+            services.AddScoped<IDiscountRepository, DiscountRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
